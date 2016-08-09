@@ -1,0 +1,21 @@
+function searchArr(arr, val){
+	
+	var midpoint;
+	
+	while(arr.length > 0){
+		midpoint = Math.floor(arr.length/2);
+		
+		if(arr[midpoint] === val) {return true;}
+
+		else if (arr[midpoint] < val){
+			arr = arr.splice(midpoint+1);
+		} else{
+			arr = arr.splice(0, midpoint);
+		}
+	}
+
+	return false;
+}
+
+
+console.log(searchArr([-33,2,1,4,5,16,77], 5));
